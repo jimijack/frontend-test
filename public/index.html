@@ -1,144 +1,117 @@
-<html>
-  <head>
-    <title>Front End Developer Test</title>
-  </head>
-  <body>
-    <h1>Front End Developer Test</h1>
-    <h2>Introduction</h2>
-    This front end developer test is designed to test your expertise writing modern web applications. There are many ways to solve the problems presented in this test, so there's no single right answer.
-    <p>
-    You are to work on this assignment on your own computer. There is no time limit for this assignment, but it is not intended to take long to finish. You are welcome to use any and all resources on the web to create your application, but you must list any software you utilized, and you should not include any code you did not write in your source files.
-    <p>
-    This test should be treated like a small product that you would deliver to a customer. Therefore you should consider easy of use, features, and the
-    overall design of the application when building your application.
-    <p>
-    If you have any questions, please feel free to contact us and ask.
-    <p>
-    <h2>Installation</h2>
-    We use Github to hold the results of the test. If you don't have an account on Github, please create one. They are available for free.
-    <br>
-    We have created a node.js application that will act as your backend server. Please fork the repository to create your own version. Then proceed to use that to complete your work.
-    <p>
-    <ul>
-      <li>You must have node installed on your computer. Node.js is available from http://nodejs.org</li>
-      <li>Run <tt>npm install</tt> to install the required node dependencies</li>
-      <li>Run <tt>node server.js</tt> to run the server itself</li>
-      <li>You should see a message on the console indicating that the server is running</li>
-      <li>Pointing a web server at http://localhost:8888 should result in the instructions being displayed.</li>
-    </ul>
-    <h2>Endpoints</h2>
-    The server uses JSON as its data format. It responds to the following endpoints:
-    <p>
-    <dl>
-      <dt><b>POST /login</b></dt>
-      <dd>Login the user
-      <br>
-      <b>INPUT</b>
-      {"user": USERNAME, "password": PASSWORD}
-      <br>
-      <b>OUTPUT</b>
-      {"result": true} and a cookie is set
-      <br>
-      <b>RAISES</b> Error 401 for an incorrect login
+<!DOCTYPE html>
+<html lang="en">
 
-      <dt><b>GET /logout</b></dt>
-      <dd>Logout the user
-      <br>
-      <b>OUTPUT</b>
-      Cookie is removed
+    <head>
 
-      <dt><b>GET /states</b></dt>
-      <dd>Get data about the US states
-      <br>
-      <b>QUERY</b>
-      The following query parameters are supported:
-      <ul>
-        <li>sort can be any field in the states. Prefixing with a '-' character
-        will invert the order of the sort. Defaults to sorting by name.
-        <li>offset is an offset in to the sorted data. Defaults to 0.
-        <li>limit will return only that many states. Defaults to 10 and has a maxmimum value of 10.
-      </ul>
-      <br>
-      <b>OUTPUT</b>
-      An array of state objects containing:<br>
-      <ul>
-        <li>name
-        <li>abbreviation
-        <li>capital
-        <li>most-populous-city
-        <li>population
-        <li>square-miles
-        <li>time-zone-1
-        <li>time-zone-2
-        <li>dst
-      </ul>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Fifty States</title>
 
-      <dt><b>GET /states/:abbreviation</b></dt>
-      <dd>Retrieve the state data for a single state.
-      <br>
-      <b>EXAMPLE</b>
-      /states/CA will return the data for California
-      <br>
-      <b>OUTPUT</b>
-      Same format as states
+        <!-- CSS -->
+        <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:400,100,300,500">
+        <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+        <link rel="stylesheet" href="assets/font-awesome/css/font-awesome.min.css">
+        <link rel="stylesheet" href="assets/css/form-elements.css">
+        <link rel="stylesheet" href="assets/css/style.css">
 
-      <dt><b>GET /states/abbreviations</b></dt>
-      <dd>Retrieve all the two letter state abbreviations
-      <br>
-      <b>OUTPUT</b>
-      An array of two letter strings ["AL", "AK", "AZ", ..., "WI", "WY"]
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
 
-      <dt><b>GET /read</b></dt>
-      <dd>Get the list of messages left in a guest book
-      <br>
-      <b>OUTPUT</b>
-      {"user": USERNAME, "phone": PHONE, "message": MESSAGE}
+        <!-- Favicon and touch icons -->
+        <link rel="shortcut icon" href="assets/ico/favicon.png">
+        <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/ico/apple-touch-icon-144-precomposed.png">
+        <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/ico/apple-touch-icon-114-precomposed.png">
+        <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/apple-touch-icon-72-precomposed.png">
+        <link rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-57-precomposed.png">
 
-      <dt><b>POST /write</b></dt>
-      <dd>Add a message to the guest book.
-      <br>
-      <b>INPUT</b>
-      {"phone": PHONE-NUMBER, "message": MESSAGE}
-      <br>
-      <b>OUTPUT</b>
-      The same as /read
-      <br>
-      <b>RAISES</b> Error 401 if the user is not logged in.
-    </dl>
-
-    <h2>Users</h2>
-    There are four predefined users
-    <ul>
-      <li>alice with a password of password1</li>
-      <li>bob with a password of password2</li>
-      <li>charlie with a password of password3</li>
-      <li>dan with a password of password4</li>
-    </ul>
-
-    <h2>Assignment</h2>
-    Create a single page application using any javascript libraries you
-    prefer. The application should provide the following functionality.
-    <ul>
-      <li>The user should be able to login and logout of the application
-      <li>The user should be able to browse through the list of all 50 states
-      <li>The user should be display the details on any single state
-      <li>The user should be able to display all the messages in the guest book
-      <li>The user should be able to add his own message to the guest book.
-    </ul>
-    <p>
-    The application should be placed in the public directory of this project.
-    <p>
-    Please create a README file in your project and answer the following questions.
-    <h2>Questions</h2>
-    <p>
-    <h3>What URL should be used to access your application?</h3>
-    <h3>What libraries did you use to write your application?</h3>
-    <h3>What influenced the design of your user interface?</h3>
-    <h3>What steps did you take to make your application user friendly?</h3>
-    <h3>What steps did you take to insure your application was secure?</h3>
-    <h3>What could be done to the front end or back end to make it more secure?</h3>
-    <h2>Submitting</h2>
-    <p>
-    Submit your results to your Github repository. Then send us an email with the URL for your repository so that we can take a look.
+        <!-- Angular -->
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.14.3/ui-bootstrap-tpls.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.min.js"></script>
 
 
+    </head>
+
+    <body>
+
+        <!-- Top content -->
+        <div class="top-content">
+
+            <div class="inner-bg">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-8 col-sm-offset-2 text">
+                            <h1><strong>U.S.A</strong> State Data</h1>
+                            <div class="description">
+                                <p>
+                                    Welcome to a one-stop-site for info on all the states in the <strong>United States of America</strong>!
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-6 col-sm-offset-3 form-box">
+                            <div class="form-top">
+                                <div class="form-top-left">
+                                    <h3>Login to go state-site...</h3>
+                                    <p>Enter your username and password below:</p>
+                                </div>
+                                <div class="form-top-right">
+                                    <i class="fa fa-lock"></i>
+                                </div>
+                            </div>
+                            <div class="form-bottom">
+                                <form role="form" action="" method="post" class="login-form">
+                                    <div class="form-group">
+                                        <label class="sr-only" for="form-username">Username</label>
+                                        <input type="text" name="form-username" placeholder="Username..." class="form-username form-control" id="form-username">
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="sr-only" for="form-password">Password</label>
+                                        <input type="password" name="form-password" placeholder="Password..." class="form-password form-control" id="form-password">
+                                    </div>
+                                    <button type="submit" class="btn">Sign in!</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <!--<div class="row">
+                        <div class="col-sm-6 col-sm-offset-3 social-login">
+                            <h3>...or login with:</h3>
+                            <div class="social-login-buttons">
+                                <a class="btn btn-link-2" href="#">
+                                    <i class="fa fa-facebook"></i> Facebook
+                                </a>
+                                <a class="btn btn-link-2" href="#">
+                                    <i class="fa fa-twitter"></i> Twitter
+                                </a>
+                                <a class="btn btn-link-2" href="#">
+                                    <i class="fa fa-google-plus"></i> Google Plus
+                                </a>
+                            </div>
+                        </div>
+                    </div>-->
+                </div>
+            </div>
+
+        </div>
+
+
+        <!-- Javascript -->
+        <script src="assets/js/jquery-1.11.1.min.js"></script>
+        <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+        <script src="assets/js/jquery.backstretch.min.js"></script>
+        <script src="assets/js/scripts.js"></script>
+
+        <!--[if lt IE 10]>
+            <script src="assets/js/placeholder.js"></script>
+        <![endif]-->
+
+    </body>
+
+</html>
