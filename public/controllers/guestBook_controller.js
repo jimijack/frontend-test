@@ -15,12 +15,12 @@
     vm.entries = [];
 
     vm.newEntry = {
-      name: "",
+      phone: "",
       message: ""
     };
 
     vm.editEntry = {
-      name: "",
+      phone: "",
       message: ""
     }
 
@@ -31,7 +31,7 @@
     vm.getEntries();
 
     function getEntries() {
-      $http.get('/api/entries').then(function(response) {
+      $http.get('/read').then(function(response) {
         vm.entries = response.data;
       }, function(errRes) {
         console.error('Error finding guestbook entries!', errRes);
@@ -39,20 +39,20 @@
     }
 
     function postEntry() {
-      $http.post('api/entries', vm.newEntry)
+      $http.post('/write', vm.newEntry)
         .then(getEntries)
         .then(function(response) {
           vm.newEntry = {
-            name: "",
+            phone: "",
             message: ""
           };
         });
     }
 
     function updateEntry(id) {
-      $http.put('api/entries/' + id, vm.editEntry).then(function(response) {
+      $http.put('/write' + id, vm.editEntry).then(function(response) {
         vm.editEntry = {
-          name: "",
+          phone: "",
           message: ""
         };
       }, function(errRes) {
@@ -62,7 +62,7 @@
 
     function resetEditForm() {
       vm.editEntry = {
-        name: "",
+        phone: "",
         message: ""
       };
     }
