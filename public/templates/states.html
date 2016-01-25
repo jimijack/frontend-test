@@ -5,10 +5,22 @@
         <th>Name</th>
         <th>Abbr.</th>
         <th>Capital</th>
+        <th>Most Populous City</th>
+        <th>Population</th>
+        <th>Square-Miles</th>
+        <th>Time-Zone 1</th>
+        <th>Time-Zone 2</th>
+        <th>DST</th>
       </tr>
       <tr ng-repeat="state in states | orderBy: 'name' ">
         <td>{{state.name}}</td>
         <td>{{state.abbreviation}}</td>
         <td>{{state.capital}}</td>
+        <td>{{state.most-populous-city}}</td>
+        <td>{{state.population}}</td>
+        <td>{{state.square-miles}}</td>
+        <td>{{state.time-zone-1}}</td>
+        <td>{{state.time-zone-2}}</td>
+        <td>{{state.dst}}</td>
       </tr>
     </table>
