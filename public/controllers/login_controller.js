@@ -26,7 +26,7 @@
       vm.user.password = vm.userHold.password
       vm.userHold.name    = "";
 
-      $state.go("search");
+      $state.go("guestBook");
     }
   }
 

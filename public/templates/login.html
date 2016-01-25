@@ -13,7 +13,7 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-sm-6 col-sm-offset-3 form-box">
+                <div class="col-sm-6 col-sm-offset-3 form-box" ng-hide="vm.user.isLoggedIn()">
                     <div class="form-top">
                         <div class="form-top-left">
                             <h3>Login to go state-site...</h3>
@@ -24,7 +24,7 @@
                         </div>
                     </div>
                     <div class="form-bottom">
-                        <form role="form" action="/" method="post" class="login-form" ng-submit="vm.login()">
+                        <form role="form" action="/" method="post" class="login-form" ng-submit="vm.logIn()">
                             <div class="form-group">
                                 <label class="sr-only" for="form-username">Username</label>
                                 <input type="text" name="form-username" placeholder="Username..." class="form-username form-control" id="form-username" ng-model="vm.userHold.name" required />

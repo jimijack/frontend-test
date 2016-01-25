@@ -11,7 +11,15 @@
     $stateProvider
       .state("loginPage", {
         url: "/",
-        templateUrl: "/templates/login.html"
+        templateUrl: "/templates/login.html",
+        controller: "LoginController",
+        controllerAs: "vm"
+      })
+      .state("guestBook", {
+        url: "/guestBook",
+        templateUrl:  "/templates/guestBook.html",
+        controller: "GuestBookController",
+        controllerAs: "vm"
       })
       .state("printCategories", {
         url: "/categories",
