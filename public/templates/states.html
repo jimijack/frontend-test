@@ -1,0 +1,14 @@
+<h2>Introduction to the 50 States</h2>
+<h4>Click the State name for more info.</h4>
+    <table>
+      <tr>
+        <th>Name</th>
+        <th>Abbr.</th>
+        <th>Capital</th>
+      </tr>
+      <tr ng-repeat="state in states | orderBy: 'name' ">
+        <td>{{state.name}}</td>
+        <td>{{state.abbreviation}}</td>
+        <td>{{state.capital}}</td>
+      </tr>
+    </table>
