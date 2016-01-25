@@ -5,7 +5,7 @@
       .module("statesApp")
       .controller("GuestBookController", GuestBookController);
 
-  TriumphsController.$inject = ["$state", "userDataService", "$log", "$http"];
+  GuestBookController.$inject = ["$state", "userDataService", "$log", "$http"];
 
   function GuestBookController($state, userDataService, $log, $http) {
     var vm = this;

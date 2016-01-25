@@ -22,8 +22,6 @@ var msgs=[
 app.use(cookieParser());
 app.use(bodyParser.json());
 
-app.use('/api/entries', entries);
-
 function sendUnauthorized(response) {
     response.status(401);
     response.send("Unauthorized");
