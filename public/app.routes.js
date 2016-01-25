@@ -21,16 +21,10 @@
         controller: "GuestBookController",
         controllerAs: "vm"
       })
-      .state("printCategories", {
-        url: "/categories",
-        templateUrl:  "/templates/categories.html",
-        controller: "PrintsController",
-        controllerAs: "vm"
-      })
-      .state("printPage", {
-        url: "/prints/:category",
-        templateUrl: "/templates/prints.html",
-        controller: "PrintsController",
+      .state("states", {
+        url: "/states",
+        templateUrl:  "/templates/states.html",
+        controller: "StatesController",
         controllerAs: "vm"
       });
 
