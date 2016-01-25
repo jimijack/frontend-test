@@ -1,1 +1,38 @@
-guestBook.html
+<div class="container">
+
+  <br>
+  <h3>Guest Book</h3>
+  <h6>Sign in to the guestbook and post your message.</h6>
+  <br>
+  <form id="new-entry" class="form-inline">
+    <div class="form-group">
+      <input type="text" name='user[name]' id="user-name" placeholder="Your Name..." class="form-control" ng-model="vm.newEntry.name" />
+    </div>
+    <div class="form-group">
+      <input type="text" name='user[message]' id="user-message" placeholder="Guest Message..." class="form-control" ng-model="vm.newEntry.message" />
+    </div>
+    <button class="btn btn-success btn-sm submit-login-button" type="submit" ng-click="vm.postEntry()">Save my message!</button>
+  </form>
+
+  <ul id="entries">
+    <li ng-repeat="entry in vm.entries" class="entry-li">
+      <br>
+      <strong>{{entry.name}}</strong> - <em>{{entry.message}}</em>
+      <button class="btn btn-warning btn-xs" ng-click="showme=true">Edit</button>
+
+      <form class="form-inline" ng-show="showme" id="edit-form">
+        <br>
+        <div class="form-group">
+          <input type="text" name='entryName' id="entry-name" placeholder="{{entry.name}}" class="form-control" ng-model="vm.editEntry.name" />
+        </div>
+        <div class="form-group">
+          <input type="text" name='entryMessage' id="entry-message" placeholder="{{entry.message}}" class="form-control" ng-model="vm.editEntry.message" />
+        </div>
+        <button class="btn btn-success btn-xs" ng-click="vm.updateEntry(entry._id)">Save</button>
+        <button class="btn btn-default btn-xs" ng-click="showme=false; vm.resetEditForm();">Cancel</button>
+
+      </form>
+    </li>
+  </ul>
+
+</div>
