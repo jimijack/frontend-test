@@ -5,9 +5,9 @@
       .module("statesApp")
       .controller("GuestBookController", GuestBookController);
 
-  GuestBookController.$inject = ["$state", "userDataService", "$log", "$http"];
+  GuestBookController.$inject = ["Message", "$state", "userDataService", "$log", "$http"];
 
-  function GuestBookController($state, userDataService, $log, $http) {
+  function GuestBookController(Message, $state, userDataService, $log, $http) {
     var vm = this;
 
     vm.user = userDataService;
@@ -28,8 +28,15 @@
     vm.postMessage      = postMessage;
     vm.resetEditForm = resetEditForm;
 
+    function resetEditForm() {
+      vm.editEntry = {
+        phone: "",
+        message: ""
+      };
+    };
+
     //Read messages
-    function getMessages() {
+    vm.getMessages = function() {
       Message.query()
        .$promise.then(function (all) {
          vm.messages = all;
@@ -43,7 +50,7 @@
 
     vm.getMessages();
 
-    function postMessage() {
+    vm.postMessage = function() {
       var message = {"phone": vm.newPhone, "message": vm.newMessage};
       $http({
           url: '/write',
@@ -52,7 +59,7 @@
       .success(function(data) {
 
       });
-      .error(function(data) {
+      error(function(data) {
           vm.loginerror = "Error in server!";
       });
       //read message again for update
@@ -83,14 +90,7 @@
     //  }).then(getMessages);
     //};
 
-    function resetEditForm() {
-      vm.editEntry = {
-        phone: "",
-        message: ""
-      };
-    };
-
-  }
+  };
 
 })();
 
