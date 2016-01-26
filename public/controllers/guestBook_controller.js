@@ -12,60 +12,83 @@
 
     vm.user = userDataService;
 
-    vm.entries = [];
+    vm.messages = [];
 
-    vm.newEntry = {
+    vm.newMessage = {
       phone: "",
       message: ""
     };
 
-    vm.editEntry = {
+    vm.editMessage = {
       phone: "",
       message: ""
     }
 
-    vm.getEntries     = getEntries;
-    vm.postEntry      = postEntry;
+    vm.getMessages     = getMessages;
+    vm.postMessage      = postMessage;
     vm.resetEditForm = resetEditForm;
 
-    vm.getEntries();
+    //Read messages
+    function getMessages() {
+      Message.query()
+       .$promise.then(function (all) {
+         vm.messages = all;
+       });
+    };
+      //$http.get('/read').then(function(response) {
+      //  vm.entries = response.data;
+      //}, function(errRes) {
+      //  console.error('Error finding guestbook entries!', errRes);
+      //});
 
-    function getEntries() {
-      $http.get('/read').then(function(response) {
-        vm.entries = response.data;
-      }, function(errRes) {
-        console.error('Error finding guestbook entries!', errRes);
+    vm.getMessages();
+
+    function postMessage() {
+      var message = {"phone": vm.newPhone, "message": vm.newMessage};
+      $http({
+          url: '/write',
+          method: 'POST',
+          data: message})
+      .success(function(data) {
+
       });
-    }
+      .error(function(data) {
+          vm.loginerror = "Error in server!";
+      });
+      //read message again for update
+      vm.getMessages();
+      //$http.post('/write', vm.newEntry)
+      //  .then(getEntries)
+      //  .then(function(response) {
+      //    vm.newEntry = {
+      //      phone: "",
+      //      message: ""
+      //    };
+      //  });
+    };
 
-    function postEntry() {
-      $http.post('/write', vm.newEntry)
-        .then(getEntries)
-        .then(function(response) {
-          vm.newEntry = {
-            phone: "",
-            message: ""
-          };
-        });
-    }
+    function updateMessage(id) {
+      $http.put({
+          url: '/write' + id,
+          method: 'PUT',
+          vm.editMessage})
 
-    function updateEntry(id) {
-      $http.put('/write' + id, vm.editEntry).then(function(response) {
-        vm.editEntry = {
+      .then(function(response) {
+        vm.editMessage = {
           phone: "",
           message: ""
         };
       }, function(errRes) {
         console.log('Error editing guestbook entry!', errRes);
-      }).then(getEntries);
-    }
+      }).then(getMessages);
+    };
 
     function resetEditForm() {
       vm.editEntry = {
         phone: "",
         message: ""
       };
-    }
+    };
 
   }
 
