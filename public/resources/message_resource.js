@@ -6,7 +6,7 @@
 
     Message.$inject = ['$resource'];
 
-    function Todo($resource) {
+    function Message($resource) {
       var MessageResource = $resource('/read',{},{});
       return MessageResource;
 
