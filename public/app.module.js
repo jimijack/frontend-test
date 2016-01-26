@@ -3,10 +3,7 @@
 
   angular
     .module('statesApp', [
-      'ui.router',
-      'ngResource',
-      'ngCookies'
-    ]);
+      'ui.router']);
 
 })();
 
