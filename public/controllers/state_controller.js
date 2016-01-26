@@ -23,12 +23,20 @@
     vm.selectState = 'AL';
     vm.isLoggedIn = document.cookie.split("=")[0] == "login";
 
+    //// Retrieve all states at start
+    //vm.states = State.get()
+//
+    //.$promise.then(function (all) {
+    //  vm.states= all.res;
+    //  vm.statesList= all.res;
+    //});
+
     // Retrieve all states at start
-    vm.states = State.get()
+    vm.states = State.query()
 
     .$promise.then(function (all) {
-      vm.states= all.res;
-      vm.statesList= all.res;
+      vm.states= all;
+      vm.statesList= all;
     });
 
     // Retrieve by state by abbreviation
