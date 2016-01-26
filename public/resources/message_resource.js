@@ -1,7 +1,7 @@
 (function() {
   'use strict';
 
-  angular.module('statesApppp')
+  angular.module('statesApp')
     .factory('Message', Message);
 
     Message.$inject = ['$resource'];

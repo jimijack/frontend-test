@@ -2,7 +2,7 @@
   'use strict';
 
   angular
-      .module('app')
+      .module('statesApp')
       .factory('State', State);
 
       State.$inject = ['$resource'];
