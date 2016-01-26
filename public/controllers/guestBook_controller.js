@@ -24,8 +24,8 @@
       message: ""
     }
 
-    vm.getMessages     = getMessages;
-    vm.postMessage      = postMessage;
+    //vm.getMessages     = getMessages;
+    //vm.postMessage      = postMessage;
     vm.resetEditForm = resetEditForm;
 
     function resetEditForm() {
@@ -56,14 +56,13 @@
           url: '/write',
           method: 'POST',
           data: message})
-      .success(function(data) {
-
-      });
-      error(function(data) {
+      .success(function(data) {})
+      .error(function(data) {
           vm.loginerror = "Error in server!";
       });
       //read message again for update
       vm.getMessages();
+
       //$http.post('/write', vm.newEntry)
       //  .then(getEntries)
       //  .then(function(response) {

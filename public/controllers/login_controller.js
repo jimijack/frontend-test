@@ -12,7 +12,7 @@
 
     vm.user   = userDataService;
     vm.logIn  = logIn;
-    vm.isLoggedIn = document.cookie.split("=")[0] == "logIn";
+    vm.isLoggedIn = document.cookie.split("=")[0] == "login";
 
     vm.userHold = {
       name: "",
