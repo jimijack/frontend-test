@@ -67,21 +67,21 @@
       //  });
     };
 
-    function updateMessage(id) {
-      $http.put({
-          url: '/write' + id,
-          method: 'PUT',
-          vm.editMessage})
-
-      .then(function(response) {
-        vm.editMessage = {
-          phone: "",
-          message: ""
-        };
-      }, function(errRes) {
-        console.log('Error editing guestbook entry!', errRes);
-      }).then(getMessages);
-    };
+    //function updateMessage(id) {
+    //  $http.put({
+    //      url: '/write' + id,
+    //      method: 'PUT',
+    //      vm.editMessage})
+//
+    //  .then(function(response) {
+    //    vm.editMessage = {
+    //      phone: "",
+    //      message: ""
+    //    };
+    //  }, function(errRes) {
+    //    console.log('Error editing guestbook entry!', errRes);
+    //  }).then(getMessages);
+    //};
 
     function resetEditForm() {
       vm.editEntry = {
