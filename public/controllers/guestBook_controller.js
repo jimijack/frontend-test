@@ -26,7 +26,7 @@
 
     //vm.getMessages     = getMessages;
     //vm.postMessage      = postMessage;
-    vm.resetEditForm = resetEditForm;
+    //vm.resetEditForm = resetEditForm;
 
     function resetEditForm() {
       vm.editEntry = {

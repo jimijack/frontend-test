@@ -16,7 +16,7 @@
         controllerAs: "vm"
       })
       .state("guestBook", {
-        url: "/guestBook",
+        url: "/home",
         templateUrl:  "/templates/guestBook.html",
         controller: "GuestBookController",
         controllerAs: "vm"
