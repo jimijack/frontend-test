@@ -24,6 +24,7 @@
   //  vm.$state = $state;
 //
   //}
+  MainController.$inject = ["$http", "$cookies"]
 
   function MainController($http, $cookies) {
 
