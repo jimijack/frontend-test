@@ -11,12 +11,12 @@
     $stateProvider
       .state("loginPage", {
         url: "/",
-        templateUrl: "/templates/login.html",
-        controller: "LoginController",
+        templateUrl: "/index.html",
+        controller: "MainController",
         controllerAs: "vm"
       })
       .state("guestBook", {
-        url: "/home",
+        url: "/guestbook",
         templateUrl:  "/templates/guestBook.html",
         controller: "GuestBookController",
         controllerAs: "vm"

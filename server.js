@@ -42,6 +42,7 @@ app.post('/login', function(request, response) {
 app.get('/logout', function(request, response) {
     response.clearCookie('login');
     response.json({result: true});
+    response.redirect('/index.html');
 });
 
 function propSort(prop) {
