@@ -51,7 +51,7 @@
                             <a href="#page-top"></a>
                         </li>
                         <li role="presentation" ui-sref-active="active">
-                            <a ui-sref="loginPage">Home</a>
+                            <a href="/">Home</a>
                         </li>
                         <li role="presentation" ui-sref-active="active" ng-show="vm.user.isLoggedIn()">
                             <a ui-sref="guestBook">Guestbook</a>
@@ -86,7 +86,7 @@
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-sm-6 col-sm-offset-3 form-box" ng-hide="vm.user.isLoggedIn()">
+                        <div class="col-sm-6 col-sm-offset-3 form-box" ng-hide="vm.isLoggedIn">
                             <div class="form-top">
                                 <div class="form-top-left">
                                     <h3>Login to go State...</h3>
@@ -112,7 +112,7 @@
                             </div>
                         </div>
 
-                        <div class="col-sm-6 col-sm-offset-3 form-box" ng-show="vm.user.isLoggedIn()">
+                        <div class="col-sm-6 col-sm-offset-3 form-box" ng-show="vm.isLoggedIn">
                           <h1>Hello <strong>{{vm.user.name}}</strong>!</h1>
                           <p>Search State information above or sign the Guestbook!</p>
                         </div>
@@ -126,9 +126,11 @@
         <!-- Login Screen -->
 
         <!-- View Templates -->
-        <main class="content" ui-view>
+        <div class="content">
+            <div ui-view>
           <!-- PAGE TEMPLATES INSERT HERE -->
-        </main>
+            </div>
+        </div>
 
 
         <!-- Javascript -->

@@ -9,12 +9,12 @@
 
   function AppRoutes($stateProvider, $urlRouterProvider) {
     $stateProvider
-      .state("loginPage", {
-        url: "/",
-        templateUrl: "/index.html",
-        controller: "MainController",
-        controllerAs: "vm"
-      })
+      //.state("loginPage", {
+      //  url: "/",
+      //  templateUrl: "/index.html",
+      //  controller: "MainController",
+      //  controllerAs: "vm"
+      //})
       .state("guestBook", {
         url: "/guestbook",
         templateUrl:  "/templates/guestBook.html",
