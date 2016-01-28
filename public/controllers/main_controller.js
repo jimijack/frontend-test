@@ -44,7 +44,7 @@
       .success(function(data) {
           if (data.result) {
             vm.isLoggedIn = true;
-            window.location.href = '#/index';
+            window.location.href = '#/home';
           } else {
             vm.loginerror = "Incorrect username or password!";
           }

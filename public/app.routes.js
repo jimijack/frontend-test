@@ -15,6 +15,12 @@
       //  controller: "MainController",
       //  controllerAs: "vm"
       //})
+      .state("homePage", {
+          url: "/home",
+          templateUrl: "/templates/home.html",
+          controller: "MainController",
+          controllerAs: "vm"
+      })
       .state("guestBook", {
         url: "/guestbook",
         templateUrl:  "/templates/guestBook.html",
