@@ -50,17 +50,17 @@
                         <li class="hidden">
                             <a href="#page-top"></a>
                         </li>
-                        <li role="presentation" ui-sref-active="active">
+                        <li>
                             <a href="#/index">Home</a>
                         </li>
-                        <li role="presentation" ui-sref-active="active" ng-show="vm.user.isLoggedIn()">
-                            <a ng-href="guestBook">Guestbook</a>
+                        <li ng-show="vm.user.isLoggedIn">
+                            <a ng-href="#/guestbook">Guestbook</a>
                         </li>
-                        <li role="presentation" ui-sref-active="active">
-                            <a ng-href="states">States</a>
+                        <li>
+                            <a ng-href="#/states">States</a>
                         </li>
-                        <li ng-show="vm.user.isLoggedIn()">
-                            <a class="btn" ng-click="vm.logOut()" style="color: #2c50aa; font-family: Roboto; font-size: 15px">Logout {{ vm.user.name }}</a>
+                        <li ng-show="vm.user.isLoggedIn">
+                            <a class="btn" ng-href="/logout" style="color: #2c50aa; font-family: Roboto; font-size: 15px">Logout {{ vm.user.name }}</a>
                         </li>
                     </ul>
                 </div>
