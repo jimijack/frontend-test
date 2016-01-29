@@ -1,6 +1,11 @@
 <div class="container" style="padding-top: 100px">
   <h2 style="color:white">Introduction to the 50 States</h2>
-  <h4 style="color:#12c8ff">Choose the State abbreviation for more info.</h4>
+  <div class="row col-md-6 col-md-offset-3">
+    <h4 style="color:#12c8ff">Choose the State abbreviation for more info.</h4>
+    <select id="singleSelect" name="singleSelect" class="form-control col-sm-6" ng-model="vm.selState" ng-change="vm.stateChanged()">
+      <option ng-repeat="state in vm.statesList" value="{{state.abbreviation}}">{{state.abbreviation}}</option>  <!-- interpolation -->
+    </select>
+  </div>
       <table class="col-md-12">
         <tr style="color: white">
           <th>Name</th>
