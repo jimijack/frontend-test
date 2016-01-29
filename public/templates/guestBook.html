@@ -22,7 +22,10 @@
     <div class="col-md-12">
       <h3><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span> &nbsp;Guest Messages</h1>
       <ul class="col-md-8 col-sm-offset-2" ng-repeat="message in vm.messages">
-        <li><a href="#/guestBook" >{{message.user}} :|: {{message.phone}} :|: {{message.message}}</a></li>
+        <li>
+          <a href="#/guestBook" >{{message.user}} :|: {{message.phone}} :|: {{message.message}}</a>
+          <button class="btn btn-xs btn-danger" ng-click="vm.deleteMessage(message)">X</button>&nbsp;
+        </li>
       </ul>
     </div>
   </div>

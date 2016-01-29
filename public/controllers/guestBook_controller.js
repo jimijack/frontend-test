@@ -75,6 +75,11 @@
       //  });
     };
 
+    vm.deleteMessage = function(message) {
+      vm.messages = vm.messages.filter(function(m) { return (m.id != message.id); });
+      message.$delete();
+    };
+
     //function updateMessage(id) {
     //  $http.put({
     //      url: '/write' + id,
