@@ -29,13 +29,6 @@
     //vm.postMessage      = postMessage;
     //vm.resetEditForm = resetEditForm;
 
-    function resetEditForm() {
-      vm.editEntry = {
-        phone: "",
-        message: ""
-      };
-    };
-
     //Read messages
     vm.getMessages = function() {
       Message.query()
@@ -64,7 +57,7 @@
       });
       //read message again for update
       vm.getMessages();
-
+      vm.resetEditForm();
       //$http.post('/write', vm.newEntry)
       //  .then(getEntries)
       //  .then(function(response) {
@@ -75,10 +68,22 @@
       //  });
     };
 
-    vm.deleteMessage = function(message) {
-      vm.messages = vm.messages.filter(function(m) { return (m.id != message.id); });
-      message.$delete();
+    vm.resetEditForm = function() {
+      vm.newPhone = '';
+      vm.newMessage = '';
+      vm.editEntry = {
+        phone: "",
+        message: ""
+      };
+
+      vm.getMessages();
+
     };
+
+    //vm.deleteMessage = function(message) {
+    //  vm.messages = vm.messages.filter(function(m) { return (m.id != message.id); });
+    //  message.$delete();
+    //};
 
     //function updateMessage(id) {
     //  $http.put({

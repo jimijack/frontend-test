@@ -33,6 +33,20 @@ h3 {
 
 img { max-width: 100%; }
 
+tr {
+  color:white;
+}
+
+#guestMessage {
+  font-family: Futura;
+  color: white;
+  font-size: 25px;
+  background: url(https://i.imgur.com/1Akc3Lr.gif) no-repeat center center;
+  background-size: 100%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
 ::-moz-selection { background: #de615e; color: #fff; text-shadow: none; }
 ::selection { background: #de615e; color: #fff; text-shadow: none; }
 

@@ -1,6 +1,6 @@
 <div class="container" style="padding-top: 100px">
   <h2 style="color:white">Introduction to the 50 States</h2>
-  <h4 style="color:#12c8ff">Click the State name for more info.</h4>
+  <h4 style="color:#12c8ff">Choose the State abbreviation for more info.</h4>
       <table class="col-md-12">
         <tr style="color: white">
           <th>Name</th>
@@ -17,11 +17,11 @@
           <td>{{state.name}}</td>
           <td>{{state.abbreviation}}</td>
           <td>{{state.capital}}</td>
-          <td>{{state.most-populous-city}}</td>
+          <td>{{state['most-populous-city']}}</td>
           <td>{{state.population}}</td>
-          <td>{{state.square-miles}}</td>
-          <td>{{state.time-zone-1}}</td>
-          <td>{{state.time-zone-2}}</td>
+          <td>{{state['square-miles']}}</td>
+          <td>{{state['time-zone-1']}}</td>
+          <td>{{state['time-zone-2']}}</td>
           <td>{{state.dst}}</td>
         </tr>
       </table>
