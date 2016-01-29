@@ -5,24 +5,25 @@
       .module("statesApp")
       .controller("GuestBookController", GuestBookController);
 
-  GuestBookController.$inject = ["Message", "$state", "userDataService", "$log", "$http"];
+  //GuestBookController.$inject = ["Message", "$state", "userDataService", "$log", "$http"];
+  GuestBookController.$inject = ["Message", "$http"]
 
-  function GuestBookController(Message, $state, userDataService, $log, $http) {
+  function GuestBookController(Message, $http) {
     var vm = this;
 
-    vm.user = userDataService;
+    //vm.user = userDataService;
 
-    vm.messages = [];
-
-    vm.newMessage = {
-      phone: "",
-      message: ""
-    };
-
-    vm.editMessage = {
-      phone: "",
-      message: ""
-    }
+    //vm.messages = [];
+//
+    //vm.newMessage = {
+    //  phone: "",
+    //  message: ""
+    //};
+//
+    //vm.editMessage = {
+    //  phone: "",
+    //  message: ""
+    //}
 
     //vm.getMessages     = getMessages;
     //vm.postMessage      = postMessage;
@@ -50,6 +51,7 @@
 
     vm.getMessages();
 
+    // Add message click handler
     vm.postMessage = function() {
       var message = {"phone": vm.newPhone, "message": vm.newMessage};
       $http({
