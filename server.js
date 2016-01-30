@@ -10,15 +10,17 @@ fs.readFile("states.json", function(err, data) {
     states = JSON.parse(data.toString());
 });
 var users={
+    james: "abc123"
     alice: "password1",
     bob: "password2",
     charlie: "password3",
     dan: "password4"
 };
 var msgs=[
-    {user:"kilroy", phone: "123 555 1212", message:"was here!"}
+    {user:"James", phone: "123 555 1212", message:"California is the best state to live in."}
 ]
 
+app.set('port', (process.env.PORT || 8888));
 app.use(cookieParser());
 app.use(bodyParser.json());
 
@@ -42,6 +44,10 @@ app.post('/login', function(request, response) {
 app.get('/logout', function(request, response) {
     response.clearCookie('login');
     response.json({result: true});
+    response.redirect('/index.html');
+});
+
+app.get('/', function(request, response) {
     response.redirect('/index.html');
 });
 
@@ -92,12 +98,12 @@ app.get('/states',function(request, response) {
     }
     var limit = request.query.limit;
     if (limit === undefined) {
-        limit = 10;
+        limit = 50;
     } else {
         limit = +limit;
     }
     if (limit > 10) {
-        limit = 10;
+        limit = 50;
     }
     result = result.slice(offset, offset+limit);
     response.json(result);
@@ -133,6 +139,6 @@ app.get('/read', function(request, response) {
 
 app.use(express.static(__dirname+'/public'));
 
-var server=app.listen(8888, function() {
-    console.log("We have started our server at http://localhost:8888");
+var server=app.listen(app.get('port'), function() {
+    console.log("We have started our server at ", app.get('port'));
 });
