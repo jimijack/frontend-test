@@ -19,7 +19,7 @@ var msgs=[
     {user:"kilroy", phone: "123 555 1212", message:"was here!"}
 ]
 
-app.use(favicon(path.join(__dirname, 'public/assets/ico', 'favicon.png')));
+//app.use(favicon(path.join(__dirname, 'public/assets/ico', 'favicon.png')));
 app.use(cookieParser());
 app.use(bodyParser.json());
 
