@@ -20,10 +20,11 @@
 
   <div class="row">
     <div class="col-md-12">
-      <h3><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span> &nbsp;Guest Messages</h1>
+      <h3 style="color:#12c8ff"><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span> &nbsp;Guest Messages</h3>
+      <h3 class="col-md-6 col-md-offset-3" style="color:white">NAME&nbsp;&nbsp;&nbsp;<span class="glyphicon glyphicon-globe"></span> &nbsp;&nbsp;&nbsp;PHONE &nbsp;&nbsp;&nbsp;<span class="glyphicon glyphicon-globe"></span> &nbsp;&nbsp;&nbsp;MESSAGE</h3>
       <ul class="col-md-8 col-sm-offset-2" ng-repeat="message in vm.messages">
         <li>
-          <a style="color:#12c8ff; font-size: 30px">{{message.user}} &nbsp;&nbsp;&nbsp;:|: &nbsp;&nbsp;&nbsp;{{message.phone}} &nbsp;&nbsp;&nbsp;:|: &nbsp;&nbsp;&nbsp;{{message.message}}</a>
+          <h3 id="messages" style="color:#2c50aa;font-size: 25px">{{message.user}} &nbsp;&nbsp;&nbsp;<span class="glyphicon glyphicon-globe"></span> &nbsp;&nbsp;&nbsp;{{message.phone}} &nbsp;&nbsp;&nbsp;<span class="glyphicon glyphicon-globe"></span> &nbsp;&nbsp;&nbsp;{{message.message}}</h3>
         </li>
       </ul>
     </div>

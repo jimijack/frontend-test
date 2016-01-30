@@ -47,6 +47,13 @@ tr {
   -webkit-text-fill-color: transparent;
 }
 
+#messages {
+  border-radius: 5px;
+  background-color: white;
+  opacity: .75;
+  padding-top: 5px;
+}
+
 #statistics {
   color: white;
 }
