@@ -10,7 +10,7 @@ fs.readFile("states.json", function(err, data) {
     states = JSON.parse(data.toString());
 });
 var users={
-    james: "abc123"
+    james: "abc123",
     alice: "password1",
     bob: "password2",
     charlie: "password3",
