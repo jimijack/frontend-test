@@ -43,7 +43,7 @@ app.post('/login', function(request, response) {
 
 app.get('/logout', function(request, response) {
     response.clearCookie('login');
-    response.json({result: true});
+    ///response.json({result: true}); - not needed for redirect
     response.redirect('/index.html');
 });
 
