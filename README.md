@@ -11,7 +11,7 @@
 ####Questions and Answers
 
 #####What URL should be used to access your application?
-* Access the application at <https://stark-retreat-45895.herokuapp.com/index.html#/>
+* Access the application at [https://stark-retreat-45895.herokuapp.com/](https://stark-retreat-45895.herokuapp.com/index.html#/)
 
 #####What libraries did you use to write your application?
 * Node.js, Angular.js, and Bootstrap for styling.
