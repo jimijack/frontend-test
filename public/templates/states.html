@@ -11,25 +11,29 @@
     <hr>
   </div>
 
-  <div class="row list-group col-md-12" ng-repeat="state in vm.states">
-      <div class="col-md-6" id="statistics">
-          <br>
-          <h3 style="color:#12c8ff">Time Zones</h3>
+  <div class="row list-group col-md-12" ng-repeat="state in vm.states" id="stateInfo">
+      <div class="col-lg-4" id="statistics">
+          <h3 style="color:#2c50aa">Time Zones</h3>
           <h5>{{ state['time-zone-1'] }}</h5>
           <h5>{{ state['time-zone-2'] }}</h5>
-          <h5>Daylight-Savings? :&nbsp;&nbsp;<span style="color:#12c8ff">{{state.dst}}</span></h5>
+          <h5>Daylight-Savings? :&nbsp;&nbsp;<span style="color:#2c50aa">{{state.dst}}</span></h5>
       </div>
-      <div class="col-md-6">
+      <div class="col-lg-4">
           <h3>Name: <span id="mostPeople">{{state.name}} &nbsp;&nbsp;({{state.abbreviation}})</span></h3>
           <div id="statistics">
             <h4>Capital: {{state.capital }}</h4>
             <p>{{ state.population }} people</p>
             <p>{{ state['square-miles'] }} Sq. Miles</p>
-            <h4>The city of <span id="mostPeople">{{ state['most-populous-city'] }}</span> is home to the most residents in {{state.name}}.</h4>
           </div>
       </div>
-      <div class="col-md-12">
-        <hr>
+      <div class="col-lg-4">
+          <div id="statistics">
+            <br>
+            <h4>The city of <span id="mostPeople" style="font-size: 20px">{{ state['most-populous-city'] }}</span> is home to the most residents in {{state.name}}.</h4>
+          </div>
       </div>
+  </div>
+  <div class="col-md-12">
+    <hr>
   </div>
 </div>
