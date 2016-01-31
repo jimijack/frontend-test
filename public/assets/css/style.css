@@ -66,7 +66,7 @@ tr {
 }
 
 #stateName {
-  text-shadow: 1.5px 1px .25px #d8d8d8;
+  text-shadow: 1.5px -1px .1px #d8d8d8;
   background: url(https://media0.giphy.com/media/uBOPUXJEj2zzq/200w.gif) no-repeat center center;
   background-size: 100%;
   -webkit-background-clip: text;
