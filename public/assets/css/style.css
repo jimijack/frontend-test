@@ -38,11 +38,11 @@ tr {
 }
 
 #guestMessage {
-  font-family: Futura;
+  font-family: Impact;
   color: white;
   font-size: 25px;
   background: url(https://i.imgur.com/1Akc3Lr.gif) no-repeat center center;
-  background-size: 100%;
+  background-size: 20%;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -59,14 +59,21 @@ tr {
 }
 
 #stateInfo {
-  border-width: 3px;
-  border-style: groove;
-  background-image: url(http://www.newsradioklbj.com/sites/g/files/exi641/f/article-images-featured/808441-373896.jpg);
+  background: #393939;
+  background-size: 100%;
   opacity: .75;
+  box-shadow: -5px 5px 10px 5px #1f3979;
+}
+
+#stateName {
+  background: url(https://media0.giphy.com/media/uBOPUXJEj2zzq/200w.gif) no-repeat center center;
+  background-size: 100%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 #statistics {
-  color: #494949;
+  color: white;
 }
 
 #mostPeople {
