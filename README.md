@@ -14,7 +14,7 @@
 * Access the application at [https://stark-retreat-45895.herokuapp.com/](https://stark-retreat-45895.herokuapp.com/index.html#/)
 
 #####What libraries did you use to write your application?
-* Node.js, Angular.js, and Bootstrap for styling.
+* Node.js runtime environment, Angular.js, and Bootstrap for styling.
 
 #####What influenced the design of your user interface?
 * Ease of use and visual appeal. The application includes two main functions to access state info and post messages about the user's experience relative to those states. With a basic structure already provided on the server/back end side, using Angular to design the client-side left more options for design and user experience.  
