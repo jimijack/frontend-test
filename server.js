@@ -14,7 +14,8 @@ var users={
     alice: "password1",
     bob: "password2",
     charlie: "password3",
-    dan: "password4"
+    dan: "password4",
+    emily: "password5"
 };
 var msgs=[
     {user:"James", phone: "123 555 1212", message:"California is the best state to live in."}
